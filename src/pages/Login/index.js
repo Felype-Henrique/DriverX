@@ -1,12 +1,30 @@
 import React from 'react'
-import {Text} from 'react-native' 
+import {Image} from 'react-native' 
 
-import {Container} from '../../styles/index'
+import logo from '../../assets/logo.png'
+import bgBottom from  '../../assets/bg-bottom-login.png'
+
+import {Container, Button, ButtonText} from '../../styles/index'
 
 const Login = () => {
     return (
-        <Container>
-            <Text>Login</Text>
+        <Container color="info50" justify="flex-end">
+            <Container 
+            justify="space-around"
+            padding={30}
+            height={270}
+            top={0}
+            zIndex={9}
+            >
+            <Image source={logo}/>  
+            <Button type="info">
+                <ButtonText color="light">Fazer Login com Facebook</ButtonText>
+            </Button>
+            <Button type="light">
+                <ButtonText>Fazer Login com Google</ButtonText>
+            </Button>
+            </Container>
+            <Image source={bgBottom}/>
         </Container>
     );
 };
