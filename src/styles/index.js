@@ -53,3 +53,26 @@ export const PickerButton = styled.TouchableOpacity`
   border-color: ${props => props.active ? theme.colors.primary : theme.colors.muted50};
   background-color: ${props => props.active ? theme.colors.primary + '80' : theme.colors.muted50};
 `;
+
+export const Input = styled.TextInput`
+  background-color: ${theme.colors.light};
+  border: 1px solid ${theme.colors.muted};
+  width: 100%;
+  padding: 7px 15px;
+`;
+
+export const Spacer = styled.View`
+  width: ${(props) => props.width || '100%'};
+  height: ${(props) => props.height || 10}px;
+`;
+
+export const AddressList = styled.FlatList`
+  flex: 1;
+  width: 100%;
+  padding-top: 10px;
+`;
+
+export const AddressItem = styled.TouchableOpacity`
+  padding: 5px 0;
+  align-items: flex-start;
+`;
