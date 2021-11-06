@@ -6,10 +6,11 @@ import Car from './src/pages/Steps/car';
 import Payment from './src/pages/Steps/payment';
 import Ride from './src/pages/Ride/index'
 import Home from './src/pages/Home';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-  <Home/>
+      <Home/>
   );
 }
 
