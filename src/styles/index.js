@@ -84,3 +84,14 @@ export const Map = styled(MapView)`
   height: 100%;
   opacity: ${props => props.disabled ? 0.2 : 1};
 `;
+
+export const Avatar = styled.Image.attrs({
+  elevation: 50,
+})`
+  width: ${(props) => props.amall ? '35px' : '50px'};
+  height: ${(props) => props.amall ? '35px' : '50px'};
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  background: ${theme.colors.muted};
+  border-radius: ${(props) => props.small ? '35px' : '50px'};
+  background: #c4c4c4;
+`;
