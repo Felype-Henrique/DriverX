@@ -5,6 +5,9 @@ import { Container, Title, SubTitle, Spacer, Map, Avatar, Input} from '../../sty
 import { TouchableOpacity} from 'react-native';
 
 const Home = () => {
+
+    const tipo = 'P'
+
     return (
         <Container>
              <Map
@@ -33,12 +36,24 @@ const Home = () => {
                 </TouchableOpacity>
             </Container>
                 
-            <Container justify="flex-start" padding={20} align="flex-start" elevetion={50} height={150} color="light">
-                <SubTitle>Olá, Silvio Sampaio</SubTitle>
-                <Title>Pra onde você quer ir ?</Title>
-                <Spacer/>
-                <Input placeholder="Procure um destino..."/>
+            <Container elevetion={50} height={150} color="light">
+
+                {/*Passageiro sem corrida*/}
+            {tipo === "P" && <Container justify="flex-start" padding={20} align="flex-start" >
+                    <SubTitle>Olá, Silvio Sampaio</SubTitle>
+                    <Title>Pra onde você quer ir ?</Title>
+                    <Spacer/>
+                    <Input placeholder="Procure um destino..."/> 
+                </Container>}
+                
+                {/*Motorista sem corrida*/}
+            {tipo === "M" && <Container>
+                <SubTitle>Olá, Juliana</SubTitle>
+                <Title>Nenhuma corrida encontrada.</Title>
+            </Container>   }
+
             </Container>
+
             </Container>
         </Container>
     )
