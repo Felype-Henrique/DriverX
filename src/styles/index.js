@@ -1,6 +1,7 @@
 import MapView from "react-native-maps";
 import styled from "styled-components/native";
-import theme from './theme.json'
+import theme from "./theme.json";
+import Pulse from "react-native-pulse";
 
 export const Container = styled.View`
   flex: 1;
@@ -109,3 +110,7 @@ export const Bullet = styled.View`
   margin-top: 2px;
   background: ${props => props.destination ? '#FF2929' : '#00EB5E'};
 `;
+
+export const PulseCircle = styled(Pulse).attrs({
+  color: theme.colors.primary,
+})``;
