@@ -95,3 +95,17 @@ export const Avatar = styled.Image.attrs({
   border-radius: ${(props) => props.small ? '35px' : '50px'};
   background: #c4c4c4;
 `;
+
+export const VerticalSeparator = styled.View`
+  width: 1px;
+  height: 100%;
+  background-color: ${theme.colors.muted};
+`;
+
+export const Bullet = styled.View`
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  margin-top: 2px;
+  background: ${props => props.destination ? '#FF2929' : '#00EB5E'};
+`;
