@@ -6,7 +6,7 @@ import { TouchableOpacity} from 'react-native';
 
 const Home = () => {
 
-    const tipo = 'P';
+    const tipo = 'M';
     const status = 'C'; // S - Sem corrida, I - Informações, P - Pesquisa, C - Corrida
 
     return (
@@ -32,10 +32,10 @@ const Home = () => {
 
                  {/*PARTE SUPERIOR*/}
             <Container height={100} align="flex-start">
-                {status === "S" &&<TouchableOpacity>
+                {status === "S" || tipo === "M" &&<TouchableOpacity>
                     <Avatar source={{uri:'https://st.depositphotos.com/1032561/3960/i/950/depositphotos_39604317-stock-photo-handsome-latin-man-thumbs-up.jpg'}}/>
                 </TouchableOpacity>}
-                {status !== "S" && 
+                {status !== "S" && tipo === "P" && 
                     <Container elevetion={50} justify="flex-end" color="light">
                         <Container padding={15}>
                             <Container justify="flex-start" row>
@@ -99,7 +99,7 @@ const Home = () => {
             </Container>}
                 
             {/*Passageiro em corrida*/}
-            <Container border="primary" justify="flex-end" align="flex-start">
+            {tipo === "P" && status === "C" &&<Container border="primary" justify="flex-end" align="flex-start">
                 <Container row padding={20} >
                     <Container align="flex-start" row>
                         <Avatar
@@ -121,16 +121,45 @@ const Home = () => {
                 <Button type="muted">
                     <ButtonText>Cancelar corrida</ButtonText>
                 </Button>
-            </Container>
+            </Container>}
 
                 {/*Motorista sem corrida*/}
-            {tipo === "M" && <Container>
+            {tipo === "M" && status === "S" &&<Container>
                 <SubTitle>Olá, Juliana</SubTitle>
                 <Title>Nenhuma corrida encontrada.</Title>
-            </Container>   }
-
-            </Container>
-
+            </Container> }
+            {/*MOTORISTA ESTA EM CORRIDA*/}
+            
+            {tipo === "M" && status === "C" && <Container border="primary" justify="flex-end" align="flex-start">
+                <Container row padding={16} >
+                    <Container align="flex-start" row >
+                        <Avatar
+                        
+                        source={{uri:'https://st.depositphotos.com/1032561/3960/i/950/depositphotos_39604317-stock-photo-handsome-latin-man-thumbs-up.jpg'}}
+                        />
+                        <Container align="flex-start" padding={1}>            
+                            <Container justify="flex-start" row row height={22}>
+                                <Bullet/>
+                                <SubTitle small numberOfLines={1} >{'  '}Endereço de embarque</SubTitle>
+                            </Container>
+                            <Container justify="flex-start" row height={22}>
+                                <Bullet destination/>
+                                <SubTitle small numberOfLines={1}>{'  '}Endereço de destino</SubTitle>
+                            </Container>
+                        </Container>
+                        </Container>
+                        <VerticalSeparator/>
+                        <Container padding={5} width={90 + 'px'}>
+                            <Title small>R$ 12,90 </Title>
+                            <SubTitle bold color="primary" small>Aprox. 5mins</SubTitle>
+                        </Container>
+                </Container>
+                <Button type="primary">
+                    <ButtonText>Aceitar corrida</ButtonText>
+                </Button>
+            </Container>}
+            
+                </Container>
             </Container>
         </Container>
     )
