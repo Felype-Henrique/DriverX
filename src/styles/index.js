@@ -1,7 +1,6 @@
 import MapView from "react-native-maps";
 import styled from "styled-components/native";
 import theme from "./theme.json";
-import Pulse from "react-native-pulse";
 
 export const Container = styled.View`
   flex: 1;
@@ -12,7 +11,7 @@ export const Container = styled.View`
   padding: ${(props) => props.padding || 0}px;
   width: 100%;
   align-items: ${(props) => props.align || 'center'};
-  max-width: ${(props) => props.width || '100%'};
+  max-width: ${(props) => props.width  || '100%'};
   max-height: ${(props) => (props.height ? props.height + 'px' : 'auto')};
   position: ${(props) => props.position || 'relative'};
   top: ${(props) => props.top || 0};
@@ -111,6 +110,3 @@ export const Bullet = styled.View`
   background: ${props => props.destination ? '#FF2929' : '#00EB5E'};
 `;
 
-export const PulseCircle = styled(Pulse).attrs({
-  color: theme.colors.primary,
-})``;

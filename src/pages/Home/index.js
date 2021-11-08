@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Pulse from "react-native-pulse";
 
 import { Container, Title, SubTitle, Spacer, Map, Avatar, Input, Button, ButtonText , VerticalSeparator, Bullet, PulseCircle} from '../../styles';
 import { TouchableOpacity} from 'react-native';
@@ -7,7 +7,7 @@ import { TouchableOpacity} from 'react-native';
 const Home = () => {
 
     const tipo = 'P';
-    const status = 'P'; // S - Sem corrida, I - Informações, P - Pesquisa, C - Corrida
+    const status = 'C'; // S - Sem corrida, I - Informações, P - Pesquisa, C - Corrida
 
     return (
         <Container>
@@ -59,11 +59,12 @@ const Home = () => {
                 padding={20}
                 zIndex={-1}
             >
-                <PulseCircle 
+                <Pulse
                 numPulses={3}
                 diameter={400}
                 speed={20}
                 duration={2000}
+                color= 'orange'
                 />
             </Container>}
 
@@ -97,6 +98,31 @@ const Home = () => {
                 </Button>
             </Container>}
                 
+            {/*Passageiro em corrida*/}
+            <Container border="primary" justify="flex-end" align="flex-start">
+                <Container row padding={20} >
+                    <Container align="flex-start" row>
+                        <Avatar
+                        small
+                        source={{uri:'https://st.depositphotos.com/1032561/3960/i/950/depositphotos_39604317-stock-photo-handsome-latin-man-thumbs-up.jpg'}}
+                        />
+                        <Spacer width="10px"/>
+                        <Container align="flex-start">
+                            <SubTitle bold>Juliana Righi</SubTitle>
+                            <SubTitle small>ABC-123, BMW X6, Preta</SubTitle>
+                        </Container>
+                        </Container>
+                        <VerticalSeparator/>
+                        <Container padding={5} width={120 + 'px'}>
+                            <Title>R$ 12,90 </Title>
+                            <SubTitle bold color="primary">Aprox. 5mins</SubTitle>
+                        </Container>
+                </Container>
+                <Button type="muted">
+                    <ButtonText>Cancelar corrida</ButtonText>
+                </Button>
+            </Container>
+
                 {/*Motorista sem corrida*/}
             {tipo === "M" && <Container>
                 <SubTitle>Olá, Juliana</SubTitle>
