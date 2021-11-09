@@ -8,5 +8,5 @@ reactotron.setAsyncStorageHandler(AsyncStorage)
     .use(reactotronRedux())
     .connect();
 
-    console.log = reactotron;
+    console.tron = reactotron;
     export default reactotron;

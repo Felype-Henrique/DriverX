@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Provider} from 'react-redux';
+import store from './src/store'
 
 import Login from './src/pages/Login';
 import Type from './src/pages/Steps/type';
@@ -12,10 +14,10 @@ import { Container } from './src/styles';
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <StatusBar/>
       <Home/>
-    </>
+    </Provider>
       
   );
 }
